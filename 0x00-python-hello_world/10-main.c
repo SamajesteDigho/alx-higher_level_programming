@@ -17,25 +17,19 @@ listint_t *reset;
 int i;
 
 head = NULL;
-add_nodeint(&head, 0);
-add_nodeint(&head, 1);
-add_nodeint(&head, 2);
-add_nodeint(&head, 3);
-add_nodeint(&head, 4);
-add_nodeint(&head, 98);
-add_nodeint(&head, 402);
-add_nodeint(&head, 972);
-add_nodeint(&head, 1024);
-add_nodeint(&head, 2048);
+for (i = 0; i < 101; i++)
+add_nodeint(&head, i);
+
 print_listint(head);
 
 current = head;
-for (i = 0; i < 6; i++)
-{
-if (i == 4)
-temp = current;
+for (i = 0; i < 26; i++)
 current = current->next;
-}
+temp = current;
+
+current = head;
+for (i = 0; i < 76; i++)
+current = current->next;
 reset = current->next;
 current->next = temp;
 
@@ -45,7 +39,7 @@ else if (check_cycle(head) == 1)
 printf("Linked list has a cycle\n");
 
 current = head;
-for (i = 0; i < 6; i++)
+for (i = 0; i < 76; i++)
 current = current->next;
 current->next = reset;
 
