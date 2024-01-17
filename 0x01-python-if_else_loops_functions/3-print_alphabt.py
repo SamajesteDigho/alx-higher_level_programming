@@ -2,4 +2,4 @@
 # CODE
 for asc in range(97, 123):
     if asc != 101 and asc != 113:
-        print(f"{asc:c}", end='')
+        print("{:c}".format(asc), end='')
