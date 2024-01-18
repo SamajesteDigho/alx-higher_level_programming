@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Compiling ${PYFILE} ..."; python3 $PYFILE >> "${PYFILE}c"
+echo "Compiling ${PYFILE} ..."; python3 $PYFILE 1> "${PYFILE}c"
