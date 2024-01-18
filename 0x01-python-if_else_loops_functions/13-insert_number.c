@@ -29,6 +29,11 @@ if (prev->next == NULL) {
 prev->next = new;
 return (new);
 }
+if (prev->n > new->n) {
+new->next = prev;
+*head = new;
+return (new);
+}
 while (prev != NULL && prev->next != NULL)
 {
 cur = prev->next;
