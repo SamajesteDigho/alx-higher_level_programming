@@ -11,7 +11,7 @@ if __name__ == "__main__":
     if op not in ['+', '-', '*', '/']:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    elif op == '+':
+    if op == '+':
         res = add(a, b)
     elif op == '-':
         res = sub(a, b)
