@@ -19,4 +19,4 @@ if __name__ == "__main__":
         res = mul(a, b)
     elif op == '/':
         res = div(a, b)
-    print("{} {} {} = {}".format(a, op, b, res))
+    print("{:d} {:c} {:d} = {}".format(a, op, b, res))
