@@ -7,8 +7,8 @@
 */
 int is_palindrome(listint_t **head){
     listint_t *tmp, *tmp2, *fh, *sh, *front, *back;
-    int count, i;
-
+    int count, i, res;
+    res = 1;
     count = 0;
     tmp = *head;
     /* Counting the elements in the list */
@@ -20,7 +20,7 @@ int is_palindrome(listint_t **head){
     /* If the list is empty or there is only one element */
     if(count == 0 || count == 1)
     {
-        return (1);
+        return (res);
     }
     /* reating a list of the 2 halfs */
     tmp = *head;
@@ -56,14 +56,12 @@ int is_palindrome(listint_t **head){
     {
         if (tmp->n != tmp2->n)
         {
-            free_listint(fh);
-            free_listint(sh);
-            return (0);
+            res = 0;
         }
         tmp = tmp->next;
         tmp2 = tmp2->next;
     }
     free_listint(fh);
     free_listint(sh);
-    return (1);
+    return (res);
 }
