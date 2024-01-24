@@ -7,7 +7,7 @@ def roman_to_int(roman_string):
         for i, x in enumerate(cpy):
             if x == ".":
                 res.append(0)
-            if x == "I" and cpy[i+1] in 'XV':
+            elif x == "I" and cpy[i+1] in 'XV':
                 res.append(-cvt[x])
             elif x == "X" and cpy[i+1] in 'CL':
                 res.append(-cvt[x])
