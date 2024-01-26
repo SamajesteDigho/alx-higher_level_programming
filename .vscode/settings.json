@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "lists.h": "c"
+        "lists.h": "c",
+        "stddef.h": "c",
+        "python.h": "c"
     }
 }
