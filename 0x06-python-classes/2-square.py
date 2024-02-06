@@ -9,9 +9,7 @@ Example:
 
 
 class Square:
-    """
-        Here is the class which defines the Square Object.
-    """
+    """ Here is the class which defines the Square Object."""
     def __init__(self, size=0):
         """ Constructor for the Square Object
         Note:
@@ -27,6 +25,6 @@ class Square:
             else:
                 self.__size: int = size
         except TypeError:
-            TypeError("size must an integer")
+            raise TypeError("size must an integer")
         except ValueError:
-            ValueError("size must be >= 0")
+            raise ValueError("size must be >= 0")
