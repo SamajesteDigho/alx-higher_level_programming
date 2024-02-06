@@ -10,7 +10,10 @@ class MagicClass:
     """MagicClass object characteristics description"""
     
     def __init__(self, radius=0):
-        """Constructor for the Magic class"""
+        """Constructor for the Magic class
+        Args:
+            radius: Circle radius
+        """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
