@@ -62,10 +62,31 @@ class Square:
         if self.size == 0:
             print("")
         else:
-            for y in range(self.size):
-                for x in range(self.size + self.position[0]):
-                    if x < self.position[0]:
-                        print(" ", end='')
-                    else:
-                        print("#", end='')
+            for y in range(self.size + self.position[1]):
+                if y < self.position[1]:
+                    print("", end='')
+                else:
+                    for x in range(self.size + self.position[0]):
+                        if x < self.position[0]:
+                            print(" ", end='')
+                        else:
+                            print("#", end='')
                 print("")
+
+    def __str__(self):
+        """Overriding the str method to display the square"""
+        string = ""
+        if self.size == 0:
+            string = ""
+        else:
+            for y in range(self.size + self.position[1]):
+                if y < self.position[1]:
+                    string += ""
+                else:
+                    for x in range(self.size + self.position[0]):
+                        if x < self.position[0]:
+                            string += " "
+                        else:
+                            string += "#"
+                string += '\n'
+        return string[:-1]
