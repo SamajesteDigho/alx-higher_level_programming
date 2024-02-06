@@ -23,7 +23,7 @@ class Square:
             elif size < 0:
                 raise ValueError
             else:
-                self.__size: int = size
+                self.__size = size
         except TypeError:
             raise TypeError("size must be an integer")
         except ValueError:
