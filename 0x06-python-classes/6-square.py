@@ -1,11 +1,23 @@
 #!/usr/bin/python3
-class Square:
-    """Here is the class which defines the Square Object."""
+"""Square Object module.
+This module defines the Square Object class and all the functions
+with the given properties and methods
+Example:
+    Square(size, position)
+"""
 
+
+class Square:
+    """
+        Here is the class which defines the Square Object.
+    """
     def __init__(self, size=0, position=(0, 0)):
-        """Here is the constructor of an instance of the Square Object
+        """ Constructor for the Square Object
+        Note:
+            This function is to initilize the object
         Args:
-            size: Size of the square instance
+            size: Size of the square
+            position: Position coordonate of the square
         """
         self.size = size
         self.position = position
@@ -16,17 +28,12 @@ class Square:
 
     @size.setter
     def size(self, value):
-        try:
-            if type(value) is not type(0):
-                raise TypeError
-            elif value < 0:
-                raise ValueError
-            else:
-                self.__size = value
-        except TypeError:
+        if type(value) is not type(0):
             raise TypeError("size must an integer")
-        except ValueError:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
 
     @property
     def position(self):
@@ -34,17 +41,12 @@ class Square:
 
     @position.setter
     def position(self, value):
-        try:
-            if type(value) is not type((0, 0)):
-                raise TypeError
-            elif value[0] < 0 or value[1] < 0:
-                raise ValueError
-            else:
-                self.__position = value
-        except TypeError:
+        if type(value) is not type((0, 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        except ValueError:
-            raise ValueError("value must be >= 0")
+        elif value[0] < 0 or value[1] < 0:
+            raise ValueError("(x1, x2), x1 and x2 must be >= 0")
+        else:
+            self.__position = value
 
     def area(self):
         """Returns the area of the square given its size"""
