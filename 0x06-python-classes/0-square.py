@@ -6,7 +6,6 @@ with the given properties and methods
 Example:
     Square(size, position)
 """
-
 class Square:
     """
         Here is the class which defines the Square Object.
