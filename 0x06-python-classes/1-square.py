@@ -16,5 +16,7 @@ class Square:
         """ Constructor for the Square Object
         Note:
             This function is to initilize the object
+        Args:
+            size: Size of the square
         """
         self.__size = size
