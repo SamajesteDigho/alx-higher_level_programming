@@ -37,27 +37,27 @@ class Square:
     def area(self):
         """Returns the area of the square given its size"""
         return self.size ** 2
-    
+
     def __eq__(self, other):
         """== operator taken in charge by the object"""
         return self.area() == other.area()
-    
+
     def __neq__(self, other):
         """!= operator taken in charge by the object"""
         return self.area() != other.area()
-    
+
     def __gt__(self, other):
         """> operator taken in charge by the object"""
         return self.area() > other.area()
-    
+
     def __ge__(self, other):
         """>= operator taken in charge by the object"""
         return self.area() >= other.area()
-    
+
     def __lt__(self, other):
         """< operator taken in charge by the object"""
         return self.area() < other.area()
-    
+
     def __le__(self, other):
         """<= operator taken in charge by the object"""
         return self.area() <= other.area()
