@@ -8,6 +8,7 @@ import math
 
 class MagicClass:
     """MagicClass object characteristics description"""
+    
     def __init__(self, radius=0):
         """Constructor for the Magic class"""
         self.__radius = 0
