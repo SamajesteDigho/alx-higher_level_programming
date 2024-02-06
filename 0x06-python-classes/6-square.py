@@ -24,10 +24,12 @@ class Square:
 
     @property
     def size(self):
+        """Getter for the size property"""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Setter for the size property"""
         if type(value) is not type(0):
             raise TypeError("size must an integer")
         elif value < 0:
@@ -37,10 +39,12 @@ class Square:
 
     @property
     def position(self):
+        """Getter for the position propery"""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Setter for the position property"""
         if type(value) is not type((0, 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
