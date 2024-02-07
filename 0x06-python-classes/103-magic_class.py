@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import math
 """
     Here the awaited description of the module.
     More is still to come
 """
+import math
 
 
 class MagicClass:
