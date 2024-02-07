@@ -72,4 +72,4 @@ class Square:
                     else:
                         string += "#"
                 string += '\n'
-        print("{}".format(string))
+        print("{}".format(string[:-1]))
