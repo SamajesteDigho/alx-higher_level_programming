@@ -31,7 +31,7 @@ class Square:
     @size.setter
     def size(self, value):
         """Setter for the size property"""
-        if type(value) is not type(0):
+        if not isinstance(value, int):
             raise TypeError("size must an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -46,7 +46,7 @@ class Square:
     @position.setter
     def position(self, value):
         """Setter for the position property"""
-        if type(value) is not type((0, 0)):
+        if not isinstance(value, tuple) and len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
             raise ValueError("(x1, x2), x1 and x2 must be >= 0")
@@ -59,25 +59,27 @@ class Square:
 
     def my_print(self):
         """Displaying the square with # symbols"""
+        string = ""
         if self.size == 0:
-            print("")
+            string += ""
         else:
             for y in range(self.size + self.position[1]):
                 if y < self.position[1]:
-                    print("", end='')
+                    string += ""
                 else:
                     for x in range(self.size + self.position[0]):
                         if x < self.position[0]:
-                            print(" ", end='')
+                            string += " "
                         else:
-                            print("#", end='')
-                print("")
+                            string += "#"
+                string += '\n'
+        print("{}".format(string[:-1]))
 
     def __str__(self):
         """Overriding the str method to display the square"""
         string = ""
         if self.size == 0:
-            string = ""
+            string += ""
         else:
             for y in range(self.size + self.position[1]):
                 if y < self.position[1]:

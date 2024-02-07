@@ -27,7 +27,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if type(value) is not type(0):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -40,10 +40,12 @@ class Square:
 
     def my_print(self):
         """Displaying the square with # symbols"""
+        string = ""
         if self.size == 0:
-            print("")
+            string += ""
         else:
             for _ in range(self.size):
                 for _ in range(self.size):
-                    print("#", end='')
-                print("")
+                    string += "#"
+                string += '\n'
+        print("{}".format(string[:-1]))
