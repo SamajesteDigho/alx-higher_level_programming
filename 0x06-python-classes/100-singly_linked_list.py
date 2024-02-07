@@ -65,7 +65,7 @@ class SinglyLinkedList:
         while tmp is not None:
             string += "{}\n".format(tmp.data)
             tmp = tmp.next_node
-        return string
+        return string[:-1]
 
     def sorted_insert(self, value):
         """ Inserting a new node in the linked list at a right position
