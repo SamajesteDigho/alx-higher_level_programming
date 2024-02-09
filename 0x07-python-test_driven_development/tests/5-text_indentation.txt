@@ -1,0 +1,11 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text = """Lorem ipsum, consectetur adipiscing elit. Beatiorem!"""
+>>> text_indentation(text)
+Lorem ipsum, consectetur adipiscing elit.
+<BLANKLINE>
+Beatiorem!
+>>> try:
+...     text_indentation(12)
+... except Exception as e:
+...     print(e)
+text must be a string
