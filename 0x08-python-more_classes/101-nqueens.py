@@ -11,7 +11,7 @@ if __name__ == "__main__":
         exit(1)
     try:
         N = int(sys.argv[1])
-    except:
+    except Exception:
         print("N must be a number")
         exit(1)
     if N < 4:
