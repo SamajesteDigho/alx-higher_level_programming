@@ -61,7 +61,7 @@ class Rectangle:
             for _ in range(self.width):
                 string += "{}".format(self.print_symbol)
             string += '\n'
-        return string[:-1]
+        return string.strip()
 
     def __repr__(self):
         """Returns the official representation of Rectangle"""
