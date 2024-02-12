@@ -11,7 +11,7 @@ if __name__ == "__main__":
     try:
         N = int(argv[1])
     except Exception:
-        print("N must be a number",file=stderr)
+        print("N must be a number", file=stderr)
         exit(1)
     if N < 4:
         print("N must be at least 4", file=stderr)
