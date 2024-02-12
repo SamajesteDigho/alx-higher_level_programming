@@ -56,4 +56,4 @@ class Rectangle:
             for _ in range(self.width):
                 string += '#'
             string += '\n'
-        return string[:-1]
+        return string.strip()
