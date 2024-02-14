@@ -11,9 +11,9 @@
 ...     print(add_integer(4, "School"))
 ... except Exception as e:
 ...     print(e)
-b must an integer
+b must be an integer
 >>> try:
 ...     print(add_integer(None))
 ... except Exception as e:
 ...     print(e)
-a must an integer
+a must be an integer
