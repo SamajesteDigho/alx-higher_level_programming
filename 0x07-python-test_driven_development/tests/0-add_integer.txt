@@ -8,7 +8,7 @@
 >>> print(add_integer(100.3, -2))
 98
 >>> try:
-...     print(add_integer(4, "School"))
+...     print(add_integer(4, "2"))
 ... except Exception as e:
 ...     print(e)
 b must be an integer
