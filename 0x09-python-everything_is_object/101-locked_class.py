@@ -4,9 +4,6 @@
 """
 
 
-from typing import Any
-
-
 class LockedClass:
     """The Locked class"""
 
