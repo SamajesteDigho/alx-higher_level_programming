@@ -9,6 +9,6 @@ class LockedClass:
 
     def __setattr__(self, __name, __value):
         if __name != "first_name":
-            error = f"'LockedClass' object has no attribute '{__name}'"
-            raise AttributeError(error)
+            err = "'LockedClass' object has no attribute '{}'".format(__name)
+            raise AttributeError(err)
         super().__setattr__(__name, __value)
