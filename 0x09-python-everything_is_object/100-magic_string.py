@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def magic_string():
-    global i
-    return ", ".join(["BestSchool" for _ in range(i + 1)])
+    magic_string.nb = magic_string.nb + 1 if hasattr(magic_string, "nb") else 1
+    return ", ".join(["BestSchool" for _ in range(magic_string.nb)])
