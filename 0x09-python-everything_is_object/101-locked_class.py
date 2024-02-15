@@ -8,6 +8,7 @@ class LockedClass:
     """The Locked class"""
 
     def __setattr__(self, __name, __value):
+        """Specifying the attributes to select"""
         if __name != "first_name":
             err = "'LockedClass' object has no attribute '{}'".format(__name)
             raise AttributeError(err)
