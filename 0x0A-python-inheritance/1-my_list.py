@@ -15,4 +15,4 @@ class MyList(list):
         """Print sprted list without changing original"""
         copy = self.copy()
         copy.sort()
-        print(copy)
+        print("{}".format(copy))
