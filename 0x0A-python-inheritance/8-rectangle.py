@@ -9,8 +9,8 @@ class Rectangle(BaseGeometry):
     """Definition de la class Rectangle fils de BaseGeometry"""
 
     def __init__(self, width, height):
-        super().__init__()
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+        super().__init__()
