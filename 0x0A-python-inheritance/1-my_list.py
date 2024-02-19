@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-    Definition of the file module for 1-my_list
+    Definition of the file module for MyList
+    The functions are:
+                __init__()
+                print_sorted()
 """
 
 
