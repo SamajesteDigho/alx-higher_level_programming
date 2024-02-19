@@ -7,6 +7,9 @@
 class BaseGeometry:
     """Definition of class BaseGeometry"""
 
+    def __init__(self):
+        """Initialization of BaseGeometry"""
+
     def area(self):
         """Returns the area of the geometric figure"""
         raise Exception("area() is not implemented")
