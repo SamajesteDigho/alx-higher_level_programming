@@ -8,7 +8,7 @@ def pascal_triangle(n):
     """Here the description of the function"""
     res = []
     if n > 0:
-        res = [[1]] 
+        res = [[1]]
         for i in range(1, n):
             row = [1]
             for x in range(1, i):
