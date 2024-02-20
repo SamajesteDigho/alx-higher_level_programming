@@ -10,5 +10,5 @@ def read_file(filename=""):
     """
         The function definition documentation
     """
-    with open(filename, encoding="utf-8") as f:
+    with open(filename) as f:
         print("{}".format(f.read()))
