@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
     Here we have the module descriptions
-    Functions: 
+    Functions:
         - read_file(filename)
 """
 
