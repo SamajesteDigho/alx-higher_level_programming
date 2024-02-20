@@ -23,3 +23,8 @@ class Student:
             return res
         elif attrs is None:
             return self.__dict__
+
+    def reload_from_json(self, json):
+        """Reloadng json"""
+        for x in json.keys():
+            self.__setattr__(x, json[x])
