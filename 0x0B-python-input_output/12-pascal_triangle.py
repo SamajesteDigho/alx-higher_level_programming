@@ -15,5 +15,4 @@ def pascal_triangle(n):
                 row.append(res[i-1][x-1] + res[i-1][x])
             row.append(1)
             res.append(row)
-    for line in res:
-        print("{}".format(line))
+    return res
