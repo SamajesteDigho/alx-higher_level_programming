@@ -18,12 +18,11 @@ if __name__ == "__main__":
             for key in keys:
                 print("{}: {}".format(key, status[key]))
         data = x.strip().split(" ")
-        if data[-1].isnumeric():
+        if "{}".format(data[-1]).isnumeric():
             size += int(data[-1])
-            if data[-2] in status.keys():
-                status[data[-2]] += 1
-            else:
-                status[data[-2]] = 1
+            if data[-2] not in status.keys():
+                status[data[-2]] = 0
+            status[data[-2]] += 1
     print("File size: {}".format(size))
     keys = list(status.keys())
     keys.sort()
