@@ -82,3 +82,63 @@ class Base:
             return []
         except Exception as e:
             print("[ERROR] {}".format(e))
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save object to csv file"""
+        classname = cls.__name__
+        filename = "{}.csv".format(classname)
+        with open(filename, "w", encoding="utf-8") as file:
+            if list_objs is None or len(list_objs) == 0:
+                file.write("")
+            else:
+                content = ""
+                if classname == "Rectangle":
+                    for elt in list_objs:
+                        content += "{},{},{},{},{},".format(elt.id,
+                                                            elt.width,
+                                                            elt.height,
+                                                            elt.x, elt.y)
+                elif classname == "Square":
+                    for elt in list_objs:
+                        content += "{},{},{},{},".format(elt.id,
+                                                         elt.width,
+                                                         elt.x, elt.y)
+                content = content[:-1]
+                file.write(content)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        classname = cls.__name__
+        filename = "{}.csv".format(classname)
+        with open(filename, "r", encoding="utf-8") as file:
+            content = file.read()
+            vals = content.split(",")
+            data = []
+            cur = 0
+            if classname == "Rectangle":
+                from rectangle import Rectangle
+                while cur < len(vals):
+                    id = int(vals[cur])
+                    width = int(vals[cur+1])
+                    height = int(vals[cur+2])
+                    x = int(vals[cur+3])
+                    y = int(vals[cur+4])
+                    rec = Rectangle(width, height, x, y, id)
+                    cur += 5
+                    data.append(rec)
+            elif classname == "Square":
+                from square import Square
+                while cur < len(vals):
+                    id = int(vals[cur])
+                    size = int(vals[cur+1])
+                    x = int(vals[cur+2])
+                    y = int(vals[cur+3])
+                    sqr = Square(size, x, y, id)
+                    cur += 4
+                    data.append(sqr)
+            return data
+
+    def draw(list_rectangles, list_squares):
+        """Draw all the rectangles and squares"""
+        
