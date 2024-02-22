@@ -81,4 +81,4 @@ class Base:
         except FileNotFoundError:
             return []
         except Exception as e:
-            print("[ERROR] {}",format(e))
+            print("[ERROR] {}".format(e))
