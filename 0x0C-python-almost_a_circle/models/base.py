@@ -139,6 +139,6 @@ class Base:
                     data.append(sqr)
             return data
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw all the rectangles and squares"""
-        
