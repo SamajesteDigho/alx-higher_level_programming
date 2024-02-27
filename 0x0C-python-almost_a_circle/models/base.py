@@ -21,11 +21,11 @@ class Base:
 
     def __init__(self, id=None):
         """Initialization of the class"""
-        if id is not None:
-            self.id = id
-        else:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -109,6 +109,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Loading file from csv"""
         classname = cls.__name__
         filename = "{}.csv".format(classname)
         with open(filename, "r", encoding="utf-8") as file:
