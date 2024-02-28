@@ -10,9 +10,7 @@ from base import Base
 class Rectangle(Base):
     """ This is the Rectangle class which inherits from Base and
         defines some new fields as follows:
-
         Attributs: width, height, x, y
-
         Methods: Getters and Setters
     """
 
