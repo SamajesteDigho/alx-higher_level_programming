@@ -4,7 +4,7 @@
     Rectangle inherits from Base class defined in this same module
     and the defines additional fields.
 """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
