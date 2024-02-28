@@ -25,7 +25,6 @@ class RectangleTestCase(unittest.TestCase):
             Rectangle(1, "2")
             Rectangle(1, 2, "3")
             Rectangle(1, 2, 3, "4")
-
             self.assertIn("width must be an integer", str(ctx.exception))
             self.assertIn("height must be an integer", str(ctx.exception))
             self.assertIn("x must be an integer", str(ctx.exception))
