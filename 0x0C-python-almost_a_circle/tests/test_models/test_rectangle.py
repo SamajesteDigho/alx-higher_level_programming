@@ -20,16 +20,10 @@ class RectangleTestCase(unittest.TestCase):
     
     def test_errors(self):
         """Test documentation here we find it"""
-        self.assertRaisesRegex(TypeError, "th must be an integer", Rectangle, "1", 2)
-        with self.assertRaises(TypeError):
-            Rectangle("1", 2)
-            Rectangle(1, "2")
-            Rectangle(1, 2, "3")
-            Rectangle(1, 2, 3, "4")
-            # self.assertIn("width must be an integer", str(ctx.exception))
-            # self.assertIn("height must be an integer", str(ctx.exception))
-            # self.assertIn("x must be an integer", str(ctx.exception))
-            # self.assertIn("y must be an integer", str(ctx.exception))
+        self.assertRaisesRegex(TypeError, "width must be an integer", Rectangle, "1", 2)
+        self.assertRaisesRegex(TypeError, "height must be an integer", Rectangle, 1, "2")
+        self.assertRaisesRegex(TypeError, "x must be an integer", Rectangle, 1, 2, "3")
+        self.assertRaisesRegex(TypeError, "y must be an integer", Rectangle, 1, 2, 3, "4")
         
         with self.assertRaises(ValueError):
             Rectangle(-1, 2)
