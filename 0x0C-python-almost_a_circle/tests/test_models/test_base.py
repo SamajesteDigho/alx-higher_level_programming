@@ -7,25 +7,31 @@ from models.base import Base
 class BaseModelTestCase(unittest.TestCase):
     """Class for the test cases"""
 
-    def setUp(self):
-        """Initialization of variables"""
-        self.base1 = Base()
-        self.base2 = Base()
-        self.base3 = Base()
-        self.base4 = Base(id=12)
-        self.base5 = Base()
-
-    def tearDown(self):
-        del self.base1
-        del self.base2
-        del self.base3
-        del self.base4
-        del self.base5
-
     def test_initializations(self):
         """Testing correct initialization at id"""
-        self.assertEqual(self.base1.id, 1)
-        self.assertEqual(self.base2.id, 2)
-        self.assertEqual(self.base3.id, 3)
-        self.assertEqual(self.base4.id, 12)
-        self.assertEqual(self.base5.id, 4)
+        base1 = Base()
+        base2 = Base(12)
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 12)
+    
+    def test_to_json_string(self):
+        """Holla"""
+        val1 = Base.to_json_string(None)
+        val2 = Base.to_json_string([])
+        val3 = Base.to_json_string([{'id': 12}])
+        self.assertEqual(val1, "[]")
+        self.assertEqual(val2, "[]")
+        self.assertEqual(val3, '[{"id": 12}]')
+    
+    def test_from_json_string(self):
+        """Hello"""
+        val1 = Base.from_json_string(None)
+        val2 = Base.from_json_string("[]")
+        val3 = Base.from_json_string('[{"id": 89}]')
+        self.assertIsInstance(val1, (list))
+        self.assertCountEqual(val1, [])
+        self.assertIsInstance(val2, (list))
+        self.assertCountEqual(val2, [])
+        self.assertIsInstance(val3, (list))
+        self.assertCountEqual(val3, [{"id": 89}])
+
