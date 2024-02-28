@@ -25,11 +25,9 @@ class RectangleTestCase(unittest.TestCase):
         self.assertRaisesRegex(TypeError, "x must be an integer", Rectangle, 1, 2, "3")
         self.assertRaisesRegex(TypeError, "y must be an integer", Rectangle, 1, 2, 3, "4")
         
-        with self.assertRaises(ValueError):
-            Rectangle(-1, 2)
-            Rectangle(1, -2)
-            Rectangle(0, 2)
-            Rectangle(1, 0)
-            Rectangle(1, 2, -3)
-            Rectangle(1, 2, 3, -4)
-        
+        self.assertRaisesRegex(ValueError, "width must be > 0", Rectangle, -1, 2)
+        self.assertRaisesRegex(ValueError, "width must be > 0", Rectangle, 0, 2)
+        self.assertRaisesRegex(ValueError, "height must be > 0", Rectangle, 1, -2)
+        self.assertRaisesRegex(ValueError, "height must be > 0", Rectangle, 1, 0)
+        self.assertRaisesRegex(ValueError, "x must be >= 0", Rectangle, 1, 2, -3)
+        self.assertRaisesRegex(ValueError, "y must be >= 0", Rectangle, 1, 2, 3, -4)
