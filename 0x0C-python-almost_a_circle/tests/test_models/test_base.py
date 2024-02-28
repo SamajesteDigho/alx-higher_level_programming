@@ -15,7 +15,7 @@ class BaseModelTestCase(unittest.TestCase):
         self.assertEqual(base2.id, 12)
     
     def test_to_json_string(self):
-        """Holla"""
+        """Test documentation here we find it"""
         val1 = Base.to_json_string(None)
         val2 = Base.to_json_string([])
         val3 = Base.to_json_string([{'id': 12}])
@@ -24,7 +24,7 @@ class BaseModelTestCase(unittest.TestCase):
         self.assertEqual(val3, '[{"id": 12}]')
     
     def test_from_json_string(self):
-        """Hello"""
+        """Test documentation here we find it"""
         val1 = Base.from_json_string(None)
         val2 = Base.from_json_string("[]")
         val3 = Base.from_json_string('[{"id": 89}]')
