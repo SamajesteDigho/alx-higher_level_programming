@@ -57,12 +57,12 @@ class Base:
         """Class instance with all attribut set"""
         classname = cls.__name__
         if classname == "Rectangle":
-            from rectangle import Rectangle
+            from models.rectangle import Rectangle
             rec = Rectangle(width=1, height=1)
             rec.update(**dictionary)
             return rec
         elif classname == "Square":
-            from square import Square
+            from models.square import Square
             sqr = Square(size=1)
             sqr.update(**dictionary)
             return sqr
@@ -118,7 +118,7 @@ class Base:
             data = []
             cur = 0
             if classname == "Rectangle":
-                from rectangle import Rectangle
+                from models.rectangle import Rectangle
                 while cur < len(vals):
                     id = int(vals[cur])
                     width = int(vals[cur+1])
@@ -129,7 +129,7 @@ class Base:
                     cur += 5
                     data.append(rec)
             elif classname == "Square":
-                from square import Square
+                from models.square import Square
                 while cur < len(vals):
                     id = int(vals[cur])
                     size = int(vals[cur+1])
