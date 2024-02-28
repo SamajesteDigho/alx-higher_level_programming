@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """ This is the file defining the Rectangle class
 
     Rectangle inherits from Base class defined in this same module
