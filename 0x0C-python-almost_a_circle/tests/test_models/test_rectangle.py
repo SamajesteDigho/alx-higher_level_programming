@@ -88,3 +88,11 @@ class RectangleTestCase(unittest.TestCase):
         Rectangle.create(**{"id": 89, "width": 1, "height": 2})
         Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3})
         Rectangle.create(**{"id": 89, "width": 1, "height": 2, "x": 3, "y": 4})
+
+    def test_advanced_functions_file(self):
+        """Test documentation here we find it"""
+        Rectangle.save_to_file(None)
+        Rectangle.save_to_file([])
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        Rectangle.load_from_file()
+        Rectangle.load_from_file()
