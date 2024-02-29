@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test file for the base class"""
 import unittest
+import sys
+import io
 from models.rectangle import Rectangle
 
 
@@ -50,9 +52,20 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(rec1.area(), 2)
         self.assertIsInstance(rec1.__str__(), str)
         self.assertEqual(rec1.__str__(), "[Rectangle] (1) 0/0 - 1/2")
-        self.assertIsNone(rec1.display())
-        self.assertIsNone(rec2.display())
-        self.assertIsNone(rec3.display())
+
+        output = io.StringIO()
+        sys.stdout = output
+        rec1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n#\n")
+        sys.stdout = output
+        rec2.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n#\n   #\n   #\n")
+        sys.stdout = output
+        rec3.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#\n#\n   #\n   #\n\n\n\n\n   #\n   #\n")
 
     def test_advanced_functions_dictionary(self):
         """Test documentation here we find it"""
