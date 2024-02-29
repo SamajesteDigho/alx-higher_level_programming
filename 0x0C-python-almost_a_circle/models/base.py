@@ -143,3 +143,35 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw all the rectangles and squares"""
+        import turtle
+        colors = [
+            "orange", "blue", "green",
+            "yellow", "magenta", "cyan",
+            "red", "gray"
+        ]
+        turtle.setup(width=800, height=800, startx=100, starty=100)
+        plane = turtle.Turtle()
+
+        plane.dot(5, "red")
+        plane.pensize(2)
+
+        all_shapes = []
+        all_shapes.extend(list_rectangles)
+        all_shapes.extend(list_squares)
+
+        for idx, elt in enumerate(all_shapes):
+            plane.color("")
+            plane.setheading(0)
+            plane.setposition(x=0, y=0)
+            plane.setposition(x=elt.x, y=elt.y)
+            plane.color(colors[idx % len(colors)])
+            plane.forward(elt.width)
+            plane.left(90)
+            plane.forward(elt.height)
+            plane.left(90)
+            plane.forward(elt.width)
+            plane.left(90)
+            plane.forward(elt.height)
+        plane.color("")
+        plane.setposition(x=0, y=0)
+        turtle.done()
