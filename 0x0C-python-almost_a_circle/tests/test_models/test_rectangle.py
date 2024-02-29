@@ -3,6 +3,7 @@
 import unittest
 import sys
 import io
+import os
 from models.rectangle import Rectangle
 
 
@@ -127,7 +128,10 @@ class RectangleTestCase(unittest.TestCase):
     def test_advanced_functions_file(self):
         """Test documentation here we find it"""
         Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
         Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
         Rectangle.save_to_file([Rectangle(1, 2)])
+        self.assertTrue(os.path.exists("Rectangle.json"))
         Rectangle.load_from_file()
         Rectangle.load_from_file()

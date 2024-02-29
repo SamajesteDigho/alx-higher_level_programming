@@ -104,6 +104,5 @@ class BaseModelTestCase(unittest.TestCase):
         self.assertTrue(os.path.exists("Square.json"))
         Square.save_to_file([Square(1)])
         self.assertTrue(os.path.exists("Square.json"))
-
         Square.load_from_file()
         Square.load_from_file()
