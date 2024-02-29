@@ -50,9 +50,9 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(rec1.area(), 2)
         self.assertIsInstance(rec1.__str__(), str)
         self.assertEqual(rec1.__str__(), "[Rectangle] (1) 0/0 - 1/2")
-        self.assertEqual(rec1.display(), None)
-        self.assertEqual(rec2.display(), None)
-        self.assertEqual(rec3.display(), None)
+        self.assertIsNone(rec1.display())
+        self.assertIsNone(rec2.display())
+        self.assertIsNone(rec3.display())
 
     def test_advanced_functions_dictionary(self):
         """Test documentation here we find it"""
