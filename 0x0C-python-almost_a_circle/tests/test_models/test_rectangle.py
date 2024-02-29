@@ -65,7 +65,8 @@ class RectangleTestCase(unittest.TestCase):
         sys.stdout = output
         rec3.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "#\n#\n   #\n   #\n\n\n\n\n   #\n   #\n")
+        self.assertEqual(output.getvalue(),
+                         "#\n#\n   #\n   #\n\n\n\n\n   #\n   #\n")
 
     def test_advanced_functions_dictionary(self):
         """Test documentation here we find it"""
