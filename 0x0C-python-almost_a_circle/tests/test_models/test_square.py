@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Test file for the base class"""
 import unittest
+import os
 from models.square import Square
 
 
@@ -98,8 +99,11 @@ class BaseModelTestCase(unittest.TestCase):
     def test_advanced_functions_files(self):
         """Test documentation here we find it"""
         Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
         Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
         Square.save_to_file([Square(1)])
+        self.assertTrue(os.path.exists("Square.json"))
 
         Square.load_from_file()
         Square.load_from_file()
