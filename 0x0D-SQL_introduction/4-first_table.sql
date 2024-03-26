@@ -1,7 +1,4 @@
 -- Create table name
-if [ -z "$1" ]; then
-    exit 1
-fi
 -- Open database
 USE "$1";
 -- Create a table
