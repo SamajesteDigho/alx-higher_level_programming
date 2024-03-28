@@ -1,3 +1,3 @@
 -- Display all tables of a given database
-USE mysql;
+USE $1;
 SHOW TABLES;
