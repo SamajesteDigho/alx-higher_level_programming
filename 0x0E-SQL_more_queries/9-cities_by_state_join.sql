@@ -1,3 +1,4 @@
 -- All cities
-SELECT cities.id, cities.name, states.name
-FROM cities, states;
+SELECT DISTINCT c.id, c.name, s.name
+FROM cities c, states s
+ORDER BY c.id ASC;
