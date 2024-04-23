@@ -2,8 +2,7 @@
 
 const args = process.argv;
 const x = parseInt(args[2]);
-let str;
-
+let str, i, j;
 if (x) {
   for (i = 0; i < x; i++) {
     str = '';
