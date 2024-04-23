@@ -7,7 +7,7 @@ if (x) {
   for (i = 0; i < x; i++) {
     str = '';
     for (j = 0; j < x; j++) {
-      str += 'x';
+      str += 'X';
     }
     console.log(str);
   }
