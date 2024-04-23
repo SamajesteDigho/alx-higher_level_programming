@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
-let args = process.argv;
-let arr = [];
+const args = process.argv;
+const arr = [];
+let i;
 
 for (i = 2; i < args.length; i++) {
   arr.push(parseInt(args[i]));
