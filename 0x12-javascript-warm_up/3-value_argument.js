@@ -1,4 +1,4 @@
-#!/user/bin/node
+#!/usr/bin/node
 
 const args = process.argv;
 if (args.length <= 2) {
