@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-let args = process.argv;
-let x = parseInt(args[2]);
+const args = process.argv;
+const x = parseInt(args[2]);
 let str;
 
 if (x) {
