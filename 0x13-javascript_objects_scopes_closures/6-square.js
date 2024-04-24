@@ -5,7 +5,6 @@ const Rectangle = require('./4-rectangle.js');
 class Square extends Rectangle {
   constructor (size) {
     super(size, size);
-    this.size = size;
   }
 
   charPrint (c) {
@@ -16,11 +15,11 @@ class Square extends Rectangle {
     } else {
       filler = 'X';
     }
-    for (i = 0; i < this.size; i++) {
-      for (j = 0; j < this.size; j++) {
+    for (i = 0; i < this.height; i++) {
+      for (j = 0; j < this.width; j++) {
         str += filler;
       }
-      if (i + 1 < this.size) {
+      if (i + 1 < this.height) {
         str += '\n';
       }
     }
