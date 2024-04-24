@@ -1,7 +1,15 @@
 #!/usr/bin/node
+const converter = require('./10-converter').converter;
 
-const logMe = require('./9-logme').logMe;
+let myConverter = converter(10);
 
-logMe("Hello");
-logMe("Best");
-logMe("School");
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
+
+
+myConverter = converter(16);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
