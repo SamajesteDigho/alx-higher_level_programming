@@ -17,5 +17,5 @@ if __name__ == "__main__":
     session = Session()
     state = session.query(State).first()
 
-    if state:
+    if state is not None:
         print("{}: {}".format(state.id, state.name))
