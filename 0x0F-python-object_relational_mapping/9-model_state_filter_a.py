@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    The module file for the Exo 7
+    The module file for the Exo 9
     Here we define the rules
 """
 import sys
@@ -15,7 +15,7 @@ if __name__ == "__main__":
                                    sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name.contains('a'))
+    states = session.query(State).filter(State.name.contains('a')).all()
 
     for x in states:
         print("{}: {}".format(x.id, x.name))
