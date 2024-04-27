@@ -15,11 +15,12 @@ host = 'localhost'
 port = 3306
 
 try:
-    db = MySQLdb.connect(host, user, password, db_name)
+    db = MySQLdb.connect(host, user, password, "db_name")
     cur = db.cursor()
     cur.execute("SELECT * FROM states")
     res = cur.fetchall()
     for x in res:
         print("{}".format(x))
+    db.close()
 except Exception as e:
     print("{}".format(e))
