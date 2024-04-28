@@ -15,7 +15,10 @@ if __name__ == "__main__":
                                    sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).first()
+    states = session.query(State).all()
 
-    if state is not None:
-        print("{}: {}".format(state.id, state.name))
+    if len(states) > 0:
+        for x in states:
+            print("{}: {}".format(x.id, x.name))
+    else:
+        print("Nothing")
