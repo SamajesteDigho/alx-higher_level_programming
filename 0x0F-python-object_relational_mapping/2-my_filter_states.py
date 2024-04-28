@@ -17,16 +17,11 @@ if __name__ == '__main__':
         port = 3306
         search = args[4]
 
-        try:
-            db = MySQLdb.connect(host, user, password, db_name)
-            cur = db.cursor()
-            query = "SELECT * FROM states WHERE name = '{}'".format(search)
-            cur.execute(query)
-            res = cur.fetchall()
-            for x in res:
-                print("{}".format(x))
-            db.close()
-        except Exception as e:
-            print("{}".format(e))
-    else:
-        print("Arguments are insufficient")
+        db = MySQLdb.connect(host, user, password, db_name)
+        cur = db.cursor()
+        query = "SELECT * FROM states WHERE name = '{}'".format(search)
+        cur.execute(query)
+        res = cur.fetchall()
+        for x in res:
+            print("{}".format(x))
+        db.close()
