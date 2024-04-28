@@ -4,7 +4,7 @@
     Here we define the rules
 """
 import sys
-import MySQLdb
+from MySQLdb import connect
 
 
 if __name__ == '__main__':
@@ -17,15 +17,10 @@ if __name__ == '__main__':
         port = 3306
         search = args[4]
 
-        try:
-            db = MySQLdb.connect(host, user, password, db_name)
-            cur = db.cursor()
-            cur.execute("SELECT * FROM states WHERE name = '%s'" % (search))
-            res = cur.fetchall()
-            for x in res:
-                print("{}".format(x))
-            db.close()
-        except Exception as e:
-            print("{}".format(e.__traceback__()))
-    else:
-        print("Arguments are insufficient")
+        db = connect(host, user, password, db_name)
+        cur = db.cursor()
+        cur.execute("SELECT * FROM states WHERE name = '%s'" % (search))
+        res = cur.fetchall()
+        for x in res:
+            print("{}".format(x))
+        db.close()

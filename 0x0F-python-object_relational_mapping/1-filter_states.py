@@ -15,16 +15,11 @@ if len(args) > 3:
     host = 'localhost'
     port = 3306
 
-    try:
-        db = MySQLdb.connect(host, user, password, db_name)
-        cur = db.cursor()
-        cur.execute("SELECT * FROM states")
-        res = cur.fetchall()
-        for x in res:
-            if x[1][0] == 'N':
-                print("{}".format(x))
-        db.close()
-    except Exception as e:
-        print("{}".format(e))
-else:
-    print("Arguments are insufficient")
+    db = MySQLdb.connect(host, user, password, db_name)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+    res = cur.fetchall()
+    for x in res:
+        if x[1][0] == 'N':
+            print("{}".format(x))
+    db.close()
