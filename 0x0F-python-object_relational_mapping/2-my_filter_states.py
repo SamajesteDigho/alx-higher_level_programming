@@ -4,7 +4,7 @@
     Here we define the rules
 """
 import sys
-import MySQLdb
+from MySQLdb import connect
 
 
 if __name__ == '__main__':
@@ -17,10 +17,9 @@ if __name__ == '__main__':
         port = 3306
         search = args[4]
 
-        db = MySQLdb.connect(host, user, password, db_name)
+        db = connect(host, user, password, db_name)
         cur = db.cursor()
-        query = "SELECT * FROM states WHERE name = '{}'".format(search)
-        cur.execute(query)
+        cur.execute("SELECT * FROM states WHERE name = '{}'".format(search))
         res = cur.fetchall()
         for x in res:
             print("{}".format(x))
