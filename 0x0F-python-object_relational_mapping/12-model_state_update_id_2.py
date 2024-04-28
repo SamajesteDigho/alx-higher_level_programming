@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    The module file for the Exo 10
+    The module file for the Exo 12
     Here we define the rules
 """
 import sys
