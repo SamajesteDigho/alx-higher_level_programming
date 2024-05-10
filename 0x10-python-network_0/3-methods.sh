@@ -1,3 +1,3 @@
 #!/bin/bash
 # Allowed requests
-curl -sI $1 | grep -i Allow | awk '{print $2}'
+curl -sI $1 | awk '/Allow:/ {print $2}'
