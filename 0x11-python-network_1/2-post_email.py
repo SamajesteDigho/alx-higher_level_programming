@@ -16,4 +16,4 @@ try:
         body = response.read()
     print(body.decode())
 except Exception as e:
-    print(e)
+    print("{}".format(e))
