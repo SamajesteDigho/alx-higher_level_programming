@@ -1,3 +1,3 @@
 #!/bin/bash
 # Get status code
-curl -sI "$1" | grep -i HTTP | awk '{print $2}'
+curl -sI -o /dev/null -w "%{http_code}" "$1" 
