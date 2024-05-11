@@ -9,9 +9,11 @@ from urllib.parse import urlencode
 
 data = {"email": sys.argv[2]}
 data_enc = urlencode(data).encode("utf-8")
-request = Request(sys.argv[1], data=data_enc)
+request = Request(sys.argv[1], data=data_enc, method="POST")
 request.add_header("Content-Type", "application/x-www-form-urlencode")
-with urlopen(request) as response:
-    body = response.read()
-
-print(body.decode())
+try:
+    with urlopen(request) as response:
+        body = response.read()
+    print(body.decode())
+except Exception as e:
+    print(e)
