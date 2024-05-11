@@ -1,3 +1,3 @@
 #!/bin/bash
 # Display the body of a curl request
-curl -s $1
+curl -sI $1 | grep -i "HTTP" | [[ $(awk '{print $2}') -eq 200 ]] && curl -s $1
