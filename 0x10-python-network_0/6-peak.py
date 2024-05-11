@@ -5,7 +5,6 @@
 def find_peak(list_of_integers):
     """ Finding the pick out of the list"""
     ls = list_of_integers
-    ls.reverse()
     if len(ls) == 0:
         return None
     if 0 < len(ls) < 3:
