@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # data = {"email": sys.argv[2]}
     # data_enc = urlencode(data).encode("utf-8")
     url = "{}?email={}".format(sys.argv[1], sys.argv[2])
-    request = Request(sys.argv[1], method="POST")
+    request = Request(url, method="POST")
     # request.add_header("Content-Type", "application/x-www-form-urlencode")
     try:
         with urlopen(request) as response:
