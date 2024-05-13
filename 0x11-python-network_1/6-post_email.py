@@ -8,4 +8,4 @@ import requests
 
 if __name__ == "__main__":
     response = requests.post(url=sys.argv[1], data={"email": sys.argv[2]})
-    print(response.content)
+    print(response.content.decode("utf-8"))
