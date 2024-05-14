@@ -13,7 +13,7 @@ if __name__ == "__main__":
         data = {"q": ""}
     response = requests.post(url="http://0.0.0.0:5000/search_user", data=data)
     try:
-        content = response.content.decode("utf-8")
+        content = response.json()
         if content is None or len(content.keys()) == 0:
             print("No result")
         else:
