@@ -15,6 +15,7 @@ request(url, function (error, response, body) {
     data.characters.forEach(actor => {
       request(actor, function (error, response, body) {
         if (error) {
+          console.error(error);
         } else {
           person = JSON.parse(body);
           console.log(person.name);
