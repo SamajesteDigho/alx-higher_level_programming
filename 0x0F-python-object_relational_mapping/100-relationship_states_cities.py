@@ -6,9 +6,11 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from relationship_city import City
-from relationship_state import State
+from relationship_city import City, Base as CBase
+from relationship_state import State, Base as SBase
+from sqlalchemy.orm import declarative_base
 
+Base = declarative_base()
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
@@ -16,9 +18,14 @@ if __name__ == "__main__":
     ), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    Base.metadata.create_all(bind=engine)
 
-    cities = session.query(City).all()
+    state = State(name="California")
+    city = City(name="San Francisco")
+    city.state_id = state
 
-    for x in cities:
-        state = session.query(State).filter(State.id == x.state_id).first()
-        print("{}: ({}) {}".format(state.name, x.id, x.name))
+
+    session.add(state)
+    # session.add(city)
+
+    session.commit()
