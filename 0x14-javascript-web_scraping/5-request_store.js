@@ -1,9 +1,19 @@
 #!/usr/bin/node
 
-const url = process.argv[2];
+const request = require('request');
+const fs = require('fs');
 
-fetch(url).then((response) => {
-  return response.body;
-}).then((data) => {
-    console.log(data)
+const url = process.argv[2];
+const path = process.argv[3];
+let text;
+
+request(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    text = body;
+    fs.writeFile(path, text, (err) => {
+      if (err) throw console.log(err);
+    });
+  }
 });
