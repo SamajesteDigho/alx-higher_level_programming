@@ -1,3 +1,3 @@
 #!/usr/bin/node
-// Change Hearde color 0-script.js
+// Change Hearde color with querySelector
 document.querySelector('header').style.color = '#FF0000';
